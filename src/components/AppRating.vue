@@ -1,3 +1,11 @@
+<script setup>
+import {ref} from 'vue'
+
+const emits = defineEmits(['submit'])
+const selectedNote = ref()
+
+const ratingOptions = [1,2,3,4,5]
+</script>
 <template>
     <div class="card__container">
         <div class=" card__header">
@@ -12,16 +20,20 @@
 
             </p>
             <ul class="rating__options">
-                <li class="item">1</li>
-                <li class="item">2</li>
-                <li class="item">3</li>
-                <li class="item">4</li>
-                <li class="item">5</li>
+                <li 
+                    v-for="item in ratingOptions"
+                    :key="item"
+                    :class="{'item--selected': item === selectedNote}"
+                    @click="selectedNote = item"
+                    class="item"
+                >
+                    {{ item }}
+                </li>
             </ul>
         </div>
 
         <div class="card__cta">
-            <button>SUBMIT</button>
+            <button @click="emits('submit', {status: false, selectedNote})">SUBMIT</button>
         </div>
     </div>
 </template>
@@ -78,6 +90,11 @@
         text-transform: uppercase;
         letter-spacing: 2px;
         font-weight: 700;
+
+        &:active{
+            background-color: var(--color-white);
+            color: var(--color-white);
+        }
     }
 }
 
@@ -97,6 +114,10 @@
         justify-items: center;
         align-content: center;
 
+        &--selected{
+            color: var(--color-white);
+            background-color: var(--color-orange);
+        }
     }
 }
 </style>
