@@ -1,16 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@800&family=Poppins&family=Titillium+Web:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 :root {
-  --color-background: #F2EAE2;
   --color-white: #FFF;
 
-  --color-heading: #191E24;
-  --color-text: #898A91;
+  --text-heading: hsl(234, 29%, 20%);
+  --text-body: hsl(235, 18%, 26%);
+  --text-gray: hsl(231, 7%, 60%);
 
-  --color-primary: #3D8069;
+  --color-tomato: hsl(4, 100%, 67%);
 
-  --font-family-sans-serif-1: 'Poppins', sans-serif;
-  --font-family-sans-serif-2: 'Titillium Web', sans-serif;
-  --font-family-serif: 'Playfair Display', serif;
 }
 
 *,
@@ -23,14 +20,11 @@
 
 body {
   min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
-  transition:
-    color 0.5s,
-    background-color 0.5s;
-  line-height: 1.6;
-  font-family: var(--font-family-sans-serif-1);
-  font-size: 15px;
+  color: var(--text-body);
+  background: var(--color-white);
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
